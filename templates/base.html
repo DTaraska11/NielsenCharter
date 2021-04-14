@@ -1,0 +1,21 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - Playlist Tracker</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<nav>
+    <ul>
+     
+    </ul>
+</nav>
+
+<section class="content">
+  <center>
+    <header>
+      {% block header %}{% endblock %}
+    </header>
+  </center>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>
